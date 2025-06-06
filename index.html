@@ -56,36 +56,24 @@
   </style>
 </head>
 <body>
-  <h1>Synthesis of Emotional Speech: Comparing Baseline, Pitch Control, and Fine-tuning in FastSpeech2</h1>
+  <h1>Synthesis of Emotional Speech: Comparing Baseline, Pitch Control, and Fine-Tuning in FastSpeech2</h1>
   <div class="meta">
-    <p><strong>Author:</strong>Hanyu Zhang</p>
+    <p><strong>Author:</strong> Hanyu Zhang</p>
   </div>
 
   <h2>Overview</h2>
- <p>
-  This project investigates the expressiveness of synthesized emotional speech by applying three different methods within the FastSpeech2 framework. 
-  Our goal is to explore which method can generate speech that sounds more emotionally expressive and natural to human listeners. 
-  We evaluate and compare the performance of:
-  (1) a neutral baseline model trained on LJSpeech,
-  (2) pitch-duration adjustment applied during inference to simulate emotion,
-  and (3) emotion-specific fine-tuning on small subsets of emotional speech (ESD Happy / Sad) under low-resource conditions.
-</p>
-  
-
-  <h2> Methodology</h2>
- <p>
-  For each test sentence, we synthesized four versions of the same utterance:
+  <p>
+    This project explores the emotional expressiveness of synthesized speech using the FastSpeech2 framework. The goal is to determine which modeling strategy produces speech that sounds more natural and emotionally expressive to human listeners. Specifically, we compare four approaches:
+  </p>
   <ol>
-    <li>Baseline (LJSpeech): A neutral speech model trained only on LJSpeech data.</li>
-    <li>Pitch & Duration Adjusted: Emotion was manually simulated by adjusting the F0 (pitch) and phoneme durations using scripts during inference.</li>
-    <li>From-scratch (ESD): Emotion-specific models trained from scratch using a limited subset of emotional speech (Happy/Sad) from the ESD corpus.</li>
-    <li>Fine-tuned : Transfer learning approach where the LJSpeech model was fine-tuned on a small emotional dataset.</li>
+    <li><strong>Baseline</strong>: A neutral TTS model trained only on non-emotional LJSpeech data.</li>
+    <li><strong>Pitch–Duration Adjustment</strong>: Emotional tone simulated at inference by scaling F0 and duration.</li>
+    <li><strong>From Scratch</strong>: Emotion-specific models trained from scratch using a subset of ESD.</li>
+    <li><strong>Fine-Tuning</strong>: Fine-tuning the baseline model on small emotional subsets of ESD.</li>
   </ol>
-</p>
-<p>
-  All versions used the same text prompts to ensure content consistency. The models were trained and evaluated under low-resource settings to test the robustness of emotional expression even with limited data.
-</p>
-
+  <p>
+    All versions use the same text prompts to ensure content consistency. The models were trained and evaluated under low-resource settings to test emotional robustness.
+  </p>
 
   <h2>Audio Comparison Table</h2>
   <div class="table-container">
@@ -93,9 +81,9 @@
       <tr>
         <th>Sentence</th>
         <th>Baseline</th>
-        <th>Pitch & Duration Adjusted</th>
-        <th>From-scratch </th>
-        <th>Fine-tuned </th>
+        <th>Pitch–Duration Adjustment</th>
+        <th>From Scratch</th>
+        <th>Fine-Tuning</th>
       </tr>
       <tr>
         <td>1. I'm sorry, I did everything I could, but it still wasn't enough.</td>
@@ -117,8 +105,7 @@
         <td><audio controls src="audio/005_pitch_duration_angry.wav"></audio></td>
         <td><audio controls src="audio/005_scratch_angry.wav"></audio></td>
         <td><audio controls src="audio/005_finetune_angry.wav"></audio></td>
-</tr>
-
+      </tr>
     </table>
   </div>
 </body>
