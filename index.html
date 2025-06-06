@@ -63,7 +63,7 @@
 
   <h2>Overview</h2>
   <p>
-    This project explores the emotional expressiveness of synthesized speech using the FastSpeech2 framework. The goal is to determine which modeling strategy produces speech that sounds more natural and emotionally expressive to human listeners. Specifically, we compare four approaches:
+    This project investigates the emotional expressiveness of synthesized speech using the FastSpeech2 framework. The objective is to evaluate which modeling strategy yields speech that is more natural and emotionally expressive to human listeners. Four approaches are compared: (1) a neutral baseline model trained on LJ-Speech, (2) pitch and duration scaling applied at inference to simulate emotions, (3) emotion-specific models trained from scratch using a small emotional corpus, and (4) fine-tuning a pre-trained model on limited emotional data representing three target emotions (happy, sad, angry).
   </p>
   <ol>
     <li><strong>Baseline</strong>: A neutral TTS model trained only on non-emotional LJSpeech data.</li>
